@@ -4,8 +4,8 @@ import edu.princeton.cs.algs4.In;
 
 /**
  * union-find 算法
- * * 初始化时所有初始点都属于不同分量（有不同id）
- * * 每添加一条连接 p-q 时，将所有属于 pID 的触点归并到 qID 中
+ * * 初始化时所有的触点属于不同分量
+ * * 每添加一条连接 p-q 时，将 p 连接到 q 所属的分量中（即 id[p] = id[q]），根触电 id[q] == q
  * */
 public class UnionFind {
     private int[] id;
@@ -33,16 +33,16 @@ public class UnionFind {
         int qID = find(q);
         if (pID == qID) return;
 
-        for (int i = 0; i < id.length; i++) {
-            if (id[i] == pID) {
-                id[i] = qID;
-            }
-        }
+        id[pID] = id[qID];
         count--;
     }
 
+    // 从 id[p] 所属分量的根，即 id[p] = p
     public int find(int p) {
-        return id[p];
+        while (id[p] != p) {
+            p = id[p];
+        }
+        return p;
     }
 
     public boolean connected(int p, int q) {

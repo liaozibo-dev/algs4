@@ -9,7 +9,7 @@ public class UnionFindTest {
     private static final String mediumUF = "mediumUF.txt";
     private static final String largeUF = "largeUF.txt";
 
-    private static final String filename = mediumUF;
+    private static final String filename = tinyUF;
 
     @Test
     public void testUF() {
