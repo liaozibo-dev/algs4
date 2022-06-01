@@ -3,6 +3,7 @@ package com.liaozibo.algs4.graph.mst;
 import com.liaozibo.algs4.graph.mst.adt.Edge;
 import com.liaozibo.algs4.graph.mst.adt.EdgeWeightedGraph;
 import com.liaozibo.algs4.util.ResourceUtils;
+import edu.princeton.cs.algs4.In;
 import org.junit.jupiter.api.Test;
 
 public class PrimeMstTest {
@@ -15,7 +16,7 @@ public class PrimeMstTest {
 
     @Test
     public void TestPrimMST() {
-        EdgeWeightedGraph G = new EdgeWeightedGraph(ResourceUtils.getResource(filename));
+        EdgeWeightedGraph G = new EdgeWeightedGraph(new In(ResourceUtils.getResource(filename)));
         MST mst = new LazyPrimMST(G);
         for (Edge e : mst.edges()) {
             System.out.println(e);

@@ -13,7 +13,7 @@ public class UnionFindTest {
 
     @Test
     public void testUF() {
-        In in = ResourceUtils.getResource(filename);
+        In in = new In(ResourceUtils.getResource(filename));
         UnionFind unionFind = new UnionFind(in);
         System.out.println(unionFind.count() + " components");
     }

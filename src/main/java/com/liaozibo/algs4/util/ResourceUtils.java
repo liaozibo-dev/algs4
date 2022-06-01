@@ -8,10 +8,11 @@ import java.nio.file.Paths;
 public class ResourceUtils {
     private static final String dir = "algs4-data";
 
-    public static In getResource(String filename) {
+    public static String getResource(String filename) {
         String path = dir + "/" + filename;
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         URL resource = classLoader.getResource(path);
-        return new In(resource.getPath().substring(1));
+        return resource.getPath().substring(1);
     }
+
 }
