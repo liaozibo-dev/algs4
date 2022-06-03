@@ -8,17 +8,20 @@ public class BruteForceSearch {
     public static int search(String pattern, String text) {
         int M = pattern.length();
         int N = text.length();
-        for (int i = 0; i <= N - M; i++) {
-            int j;
-            for (j = 0; j < M; j++) {
-                if (text.charAt(i+j) != pattern.charAt(j)) {
-                    break;
-                }
-            }
-            if (j == M) {
-                return i; // 找到子字符串，返回其首字母位置
+        int i, j;
+        for (i = 0, j = 0; i <= N - M && j < M; i++) {
+            if (text.charAt(i) == pattern.charAt(j)) {
+                j++;
+            } else {
+                // 不匹配时
+                i = i - j; // 回退指针 i
+                j = 0; // 重置指针 j
             }
         }
-        return -1;
+        if (j == M) {
+            return i - j;
+        } else {
+            return -1;
+        }
     }
 }
