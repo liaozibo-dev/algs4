@@ -6,7 +6,7 @@ import com.liaozibo.algs4.util.ResourceUtils;
 import edu.princeton.cs.algs4.In;
 import org.junit.jupiter.api.Test;
 
-public class SearchTest {
+public class BruteForceSearchTest {
 
     private static final String filename = "tinyG.txt";
 
