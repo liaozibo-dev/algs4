@@ -21,6 +21,7 @@ public class KruskalMST implements MST {
         for (Edge e : G.edges()) {
             pq.add(e);
         }
+
         // 开始生成最小生成树
         while (!pq.isEmpty() && mst.size() < G.V() - 1) {
             Edge e = pq.remove();

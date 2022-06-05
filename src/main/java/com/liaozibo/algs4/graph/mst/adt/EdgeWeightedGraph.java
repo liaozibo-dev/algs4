@@ -1,7 +1,6 @@
 package com.liaozibo.algs4.graph.mst.adt;
 
 import com.liaozibo.algs4.base.Bag;
-import com.liaozibo.algs4.graph.mst.adt.Edge;
 import edu.princeton.cs.algs4.In;
 
 /**
